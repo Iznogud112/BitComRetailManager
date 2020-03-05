@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.1022
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitComDataManager", "BitComDataManager\BitComDataManager.csproj", "{88D18E91-3687-49FF-898D-1017575693D1}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BitComRMData", "BitComRMData\BitComRMData.sqlproj", "{434E5323-6620-4CF9-9684-5E20A8111294}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitComRMDesktopUI", "BitComRMDesktopUI\BitComRMDesktopUI.csproj", "{DC67A3A9-F657-4BC5-A829-589F1B183049}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,16 @@ Global
 		{88D18E91-3687-49FF-898D-1017575693D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88D18E91-3687-49FF-898D-1017575693D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88D18E91-3687-49FF-898D-1017575693D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{434E5323-6620-4CF9-9684-5E20A8111294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{434E5323-6620-4CF9-9684-5E20A8111294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{434E5323-6620-4CF9-9684-5E20A8111294}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{434E5323-6620-4CF9-9684-5E20A8111294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{434E5323-6620-4CF9-9684-5E20A8111294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{434E5323-6620-4CF9-9684-5E20A8111294}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DC67A3A9-F657-4BC5-A829-589F1B183049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC67A3A9-F657-4BC5-A829-589F1B183049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC67A3A9-F657-4BC5-A829-589F1B183049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC67A3A9-F657-4BC5-A829-589F1B183049}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
