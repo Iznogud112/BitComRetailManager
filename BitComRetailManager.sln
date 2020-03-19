@@ -9,6 +9,10 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BitComRMData", "BitComRMDat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitComRMDesktopUI", "BitComRMDesktopUI\BitComRMDesktopUI.csproj", "{DC67A3A9-F657-4BC5-A829-589F1B183049}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitComDataManager.Library", "BitComDataManager.Library\BitComDataManager.Library.csproj", "{78F6EA7B-4651-43EF-8D61-6B9BD1F25B8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitComDesktopUI.Library", "BitComDesktopUI.Library\BitComDesktopUI.Library.csproj", "{8C75F87B-F8D6-4038-8F22-749A9BBB5EBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,14 @@ Global
 		{DC67A3A9-F657-4BC5-A829-589F1B183049}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC67A3A9-F657-4BC5-A829-589F1B183049}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC67A3A9-F657-4BC5-A829-589F1B183049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78F6EA7B-4651-43EF-8D61-6B9BD1F25B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78F6EA7B-4651-43EF-8D61-6B9BD1F25B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78F6EA7B-4651-43EF-8D61-6B9BD1F25B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78F6EA7B-4651-43EF-8D61-6B9BD1F25B8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C75F87B-F8D6-4038-8F22-749A9BBB5EBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C75F87B-F8D6-4038-8F22-749A9BBB5EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C75F87B-F8D6-4038-8F22-749A9BBB5EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C75F87B-F8D6-4038-8F22-749A9BBB5EBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

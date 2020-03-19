@@ -14,6 +14,7 @@ namespace BitComDataManager.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
+            //Information of user how is logged in
             string userId = RequestContext.Principal.Identity.GetUserId();
 
             return new string[] { "value1", "value2", userId };

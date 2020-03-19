@@ -1,4 +1,6 @@
-﻿using BitComRMDesktopUI.Helpers;
+﻿using BitComDesktopUI.Library.API;
+using BitComDesktopUI.Library.Models;
+using BitComRMDesktopUI.Helpers;
 using Caliburn.Micro;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,7 @@ namespace BitComRMDesktopUI.ViewModels
         private string _userName;
         private string _password;
         private IAPIHelper _apiHelper;
+        private string _ErrorMessage;
 
         public LoginViewModel(IAPIHelper apiHelper)
         {
@@ -49,6 +52,35 @@ namespace BitComRMDesktopUI.ViewModels
             }
         }
 
+        public bool IsErrorVisible
+        {
+            get
+            {
+                bool output = false;
+
+                if(ErrorMessage?.Length > 0)
+                {
+                    output = true;
+                }
+
+                return output;
+            }
+        }
+
+        public string ErrorMessage
+        {
+            get
+            {
+                return _ErrorMessage;
+            }
+            set
+            {
+                _ErrorMessage = value;
+                NotifyOfPropertyChange(() => IsErrorVisible);
+                NotifyOfPropertyChange(() => ErrorMessage);
+            }
+        }
+
         public bool CanLogIn
         {
             
@@ -69,12 +101,15 @@ namespace BitComRMDesktopUI.ViewModels
         {
             try
             {
+                ErrorMessage = "";
                  var result = await _apiHelper.Authenticate(UserName, Password);
 
+                //Capture more information about user
+                await _apiHelper.GetLoggedInUserInfo(result.AccessToken);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                ErrorMessage = ex.Message;
             }
         }
 
