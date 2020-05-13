@@ -1,5 +1,6 @@
 ﻿using BitComDesktopUI.Library.API;
 using BitComDesktopUI.Library.Models;
+using BitComRMDesktopUI.EventModels;
 using BitComRMDesktopUI.Helpers;
 using Caliburn.Micro;
 using System;
@@ -16,10 +17,12 @@ namespace BitComRMDesktopUI.ViewModels
         private string _password;
         private IAPIHelper _apiHelper;
         private string _ErrorMessage;
+        private IEventAggregator _events;
 
-        public LoginViewModel(IAPIHelper apiHelper)
+        public LoginViewModel(IAPIHelper apiHelper, IEventAggregator events)
         {
             _apiHelper = apiHelper;
+            _events = events;
         }
 
         public string UserName
@@ -106,6 +109,8 @@ namespace BitComRMDesktopUI.ViewModels
 
                 //Capture more information about user
                 await _apiHelper.GetLoggedInUserInfo(result.AccessToken);
+
+                _events.BeginPublishOnUIThread(new LogOnEventModel()); 
             }
             catch (Exception ex)
             {

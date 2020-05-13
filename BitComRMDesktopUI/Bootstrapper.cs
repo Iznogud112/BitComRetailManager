@@ -26,7 +26,8 @@ namespace BitComRMDesktopUI
 
         protected override void Configure()
         {
-            _container.Instance(_container);
+            _container.Instance(_container)
+                .PerRequest<IProductEndpoint, ProductEndpoint>();
 
             _container
                 //service     //implementation
