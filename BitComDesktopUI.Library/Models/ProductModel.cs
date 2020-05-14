@@ -13,5 +13,6 @@ namespace BitComDesktopUI.Library.Models
         public string Decription { get; set; }
         public decimal RetailPrice { get; set; }
         public int QuantitiyInStock { get; set; }
+        public bool IsTaxable { get; set; }
     }
 }

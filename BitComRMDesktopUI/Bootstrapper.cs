@@ -1,4 +1,5 @@
 ﻿using BitComDesktopUI.Library.API;
+using BitComDesktopUI.Library.Helpers;
 using BitComDesktopUI.Library.Models;
 using BitComRMDesktopUI.Helpers;
 using BitComRMDesktopUI.ViewModels;
@@ -34,6 +35,7 @@ namespace BitComRMDesktopUI
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
                 .Singleton<ILoggedInUserModel ,LoggedInUserModel>()
+                .Singleton<IConfigHelper, ConfigHelper>()
                 .Singleton<IAPIHelper, APIHelper>();
 
             GetType().Assembly.GetTypes()
