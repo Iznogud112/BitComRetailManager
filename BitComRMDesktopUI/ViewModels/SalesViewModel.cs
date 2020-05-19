@@ -109,13 +109,10 @@ namespace BitComRMDesktopUI.ViewModels
             decimal taxAmount = 0;
             decimal taxRate = _configHelper.GetTexRate()/100;
 
-            foreach (var item in Cart)
-            {
-                if (item.Product.IsTaxable)
-                {
-                    taxAmount += (item.Product.RetailPrice * item.QuantityInCart * taxRate);
-                }
-            }
+            taxAmount = Cart
+                .Where(x => x.Product.IsTaxable)
+                .Sum(x => x.Product.RetailPrice * x.QuantityInCart * taxRate);
+
             return taxAmount;
         }
 
