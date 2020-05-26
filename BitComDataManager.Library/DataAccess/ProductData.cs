@@ -18,5 +18,14 @@ namespace BitComDataManager.Library.DataAccess
 
             return output;
         }
+
+        public ProductModel GetById(int id)
+        {
+            SqlDataAccess sql = new SqlDataAccess();
+
+            var output = sql.LoadData<ProductModel, dynamic>("dbo.spProduct_GetById", new { Id = id}, "BitComRMData").FirstOrDefault();
+
+            return output;
+        }
     }
 }

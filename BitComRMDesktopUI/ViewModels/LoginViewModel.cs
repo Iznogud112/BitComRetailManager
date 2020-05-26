@@ -13,8 +13,8 @@ namespace BitComRMDesktopUI.ViewModels
 {
     public class LoginViewModel : Screen
     {
-        private string _userName;
-        private string _password;
+        private string _userName = "bla@blabla.com";
+        private string _password = "Blabla!123";
         private IAPIHelper _apiHelper;
         private string _ErrorMessage;
         private IEventAggregator _events;

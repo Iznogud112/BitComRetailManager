@@ -14,13 +14,15 @@ namespace BitComRMDesktopUI.ViewModels
     public class SalesViewModel : Screen
     {
         private BindingList<ProductModel> _products;
+        ISaleEndpoint _saleEndpoint;
         IProductEndpoint _productEndpoint;
         IConfigHelper _configHelper;
 
-        public SalesViewModel(IProductEndpoint productEndpoint, IConfigHelper configHelper)
+        public SalesViewModel(IProductEndpoint productEndpoint, IConfigHelper configHelper, ISaleEndpoint saleEndpoint)
         {
             _productEndpoint = productEndpoint;
             _configHelper = configHelper;
+            _saleEndpoint = saleEndpoint;
         }
 
         protected override async void OnViewLoaded(object view)
@@ -177,6 +179,7 @@ namespace BitComRMDesktopUI.ViewModels
             NotifyOfPropertyChange(() => SubTotal);
             NotifyOfPropertyChange(() => Tax);
             NotifyOfPropertyChange(() => Total);
+            NotifyOfPropertyChange(() => CanCheckOut);
         }
 
         public bool CanRemoveToCart
@@ -196,6 +199,7 @@ namespace BitComRMDesktopUI.ViewModels
             NotifyOfPropertyChange(() => SubTotal);
             NotifyOfPropertyChange(() => Tax);
             NotifyOfPropertyChange(() => Total);
+            NotifyOfPropertyChange(() => CanCheckOut);
         }
 
         public bool CanCheckOut
@@ -204,15 +208,30 @@ namespace BitComRMDesktopUI.ViewModels
             {
                 bool output = false;
 
+                if (Cart.Count > 0)
+                {
+                    output = true;
+                }
                 //Make sure there is something in Cart
 
                 return output;
             }
         }
 
-        public void CheckOut()
+        public async Task CheckOut()
         {
+            SaleModel sale = new SaleModel();
 
+            foreach (var item in Cart)
+            {
+                sale.SaleDetails.Add(new SaleDetailModel
+                {
+                    ProductId = item.Product.Id,
+                    Quantity = item.QuantityInCart
+                });
+            }
+
+            await _saleEndpoint.PostSale(sale);
         }
     }
 }
